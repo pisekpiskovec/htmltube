@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTMLTube</title>
+		<h1>HTMLTube</h1>
+	</head>
+	<nav>
+		<form>
+			<label for="strTag">YT Video Tag:</label>
+			<input type="text" id="strTag" pattern="[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]">
+			<input type="button" value="Load" onclick="loadEmbed()">
+		</form>
+	</nav>
+	<br>
+	<body>
+		<iframe width="320" height="240" id="ytEmbed" src="https://www.youtube.com/embed/92E0X59wzeg">
+			IFrame is not supported
+		</iframe>
+	</body>
+</html>
+
+<!--- JavaScript Part --->
+<html>
+	<script>
+		function loadEmbed(){
+			document.getElementById("ytEmbed").src = "https://www.youtube.com/embed/" + document.getElementById("strTag").value;
+		}
+	</script>
+</html>
